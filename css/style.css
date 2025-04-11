@@ -6,10 +6,37 @@
   --logout-btn-color: #ffc107;
 }
 
+a {
+  text-decoration: none;
+  color: white;
+}
+
+a:hover {
+  text-decoration: none;
+  color: white;
+}
+
 .container-fluid {
   background-color: var(--bg-color-one);
 }
 
-.logoutBtn {
-  width: 100%;
+.nav-toggle-btn {
+  background-image: url(../images/bars.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+
+.collapsed {
+  height: 0;
+  overflow: hidden;
+  transition: all 0.2s;
+}
+
+.open {
+  height: 36px;
 }

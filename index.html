@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="./css/style.css" />
     <link rel="stylesheet" href="./css/bootstrap.min.css" />
     <link
       rel="stylesheet"
@@ -12,38 +11,30 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
   <body>
     <div class="container-fluid vw-100 vh-100">
-      <nav class="navbar navbar-expand-lg bg-body-tertiary">
-        <div class="container-fluid d-flex justify-content-between">
-          <a class="navbar-brand" href="#">Navbar</a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <button
-              id="search"
-              class="btn btn-outline-success ms-auto"
-              type="submit"
-            >
-              Search
+      <nav class="container">
+        <div class="d-flex justify-content-between align-items-center">
+          <a href="#">SMART LOGIN</a>
+          <div>
+            <div class="nav-toggle-btn"></div>
+            <button id="openLogout" class="btn btn-warning w-100 border-0">
+              Logout
             </button>
           </div>
+        </div>
+        <div id="collapsedItems" class="collapsed">
+          <button id="closedLogout" class="btn btn-warning w-100 border-0">
+            Logout
+          </button>
         </div>
       </nav>
     </div>
 
-    <script src="./js/main.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
+    <script src="./js/main.js"></script>
   </body>
 </html>

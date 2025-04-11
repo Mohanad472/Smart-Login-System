@@ -1,11 +1,32 @@
-var navbarCollapse = document.getElementById("navbarSupportedContent");
-var searchBtn = document.getElementById("search");
+navToggleBtn = document.querySelector(".nav-toggle-btn");
+collapsedItems = document.getElementById("collapsedItems");
+openLogoutBtn = document.getElementById("openLogout");
 
-navbarCollapse.addEventListener("shown.bs.collapse", function () {
-  console.log("hh");
-  searchBtn.classList.add("w-100");
-});
-navbarCollapse.addEventListener("hidden.bs.collapse", function () {
-  console.log("dd");
-  searchBtn.classList.remove("w-100");
-});
+// showCollapse();
+console.log(collapsedItems);
+
+showToggleBtn();
+
+navToggleBtn.addEventListener("click", showCollapse);
+window.addEventListener("resize", showToggleBtn);
+
+console.log(navToggleBtn);
+
+function showCollapse() {
+  if (collapsedItems.classList.contains("open")) {
+    collapsedItems.classList.remove("open");
+  } else {
+    collapsedItems.classList.add("open");
+  }
+}
+
+function showToggleBtn() {
+  if (window.innerWidth < 992) {
+    navToggleBtn.classList.remove("d-none");
+    openLogoutBtn.classList.add("d-none");
+  } else {
+    navToggleBtn.classList.add("d-none");
+    openLogoutBtn.classList.remove("d-none");
+    collapsedItems.classList.remove("open");
+  }
+}
