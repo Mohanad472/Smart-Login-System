@@ -1,0 +1,15 @@
+:root {
+  --bg-color-one: #24353f;
+  --main-color: #17a2b8;
+  --secondary-color: #80bdff;
+  --warning-message-color: RGB(220, 53, 69);
+  --logout-btn-color: #ffc107;
+}
+
+.container-fluid {
+  background-color: var(--bg-color-one);
+}
+
+.logoutBtn {
+  width: 100%;
+}
