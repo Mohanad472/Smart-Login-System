@@ -86,6 +86,8 @@ function signUpWindowShow() {
   loginMainBtn.classList.add("d-none");
   navBar.classList.add("d-none");
   emailAuthenticationInput.classList.remove("d-none");
+  emailAuthenticationInput.placeholder =
+    "Enter your authentication email (optional)";
 }
 
 function signInWindowShow() {
