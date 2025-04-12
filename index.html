@@ -63,6 +63,15 @@
               </div>
               <div class="mb-3">
                 <input
+                  type="email"
+                  class="form-control d-none"
+                  id="emailAuthenticationInput"
+                  aria-describedby="emailHelp"
+                  placeholder="Authentication email (optional)"
+                />
+              </div>
+              <div class="mb-3">
+                <input
                   type="password"
                   class="form-control"
                   id="passwordInput"
@@ -75,10 +84,23 @@
               <p id="emailExistsText" class="text-danger d-none">
                 Email already exists
               </p>
+              <p id="authenticationExistsText" class="text-danger d-none">
+                Authentication email already exists
+              </p>
               <p id="emailValidText" class="text-danger d-none">
                 Email not valid, hint: Email should have @ and end with domain
                 name <br />ex: hello@yahoo.com
               </p>
+              <p id="pleaseEnterNameText" class="text-danger d-none">
+                Please enter a Name
+              </p>
+              <p id="pleaseEnterEmailText" class="text-danger d-none">
+                Please enter an email
+              </p>
+              <p id="pleaseEnterPassText" class="text-danger d-none">
+                Please enter a password
+              </p>
+              <p id="passwordShowText" class="text-white d-none"></p>
               <p id="successText" class="text-success d-none">Success</p>
               <button
                 id="loginMainBtn"
@@ -94,12 +116,34 @@
               >
                 Sign Up
               </button>
+              <button
+                id="showPasswordBtn"
+                type="submit"
+                class="btn btn-primary w-100 login my-3 d-none"
+              >
+                Show Password
+              </button>
             </form>
             <p class="text-white" id="signUpText">
               Don’t have an account? <a href="#" id="signUpLink">Sign Up</a>
+              <br />
+              <a
+                href="#"
+                class="text-decoration-underline"
+                id="forgotPasswordLink"
+                >Forgot your password</a
+              >
             </p>
             <p class="text-white d-none" id="signInText">
               You have an account? <a href="#" id="signInLink">Sign in</a>
+            </p>
+            <p class="d-none" id="ReturnToLoginText">
+              <a
+                href="#"
+                class="text-decoration-underline"
+                id="ReturnToLoginLink"
+                >Return to login</a
+              >
             </p>
           </div>
         </div>

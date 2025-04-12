@@ -87,3 +87,13 @@ form button.login:hover {
 .box p a:hover {
   text-decoration: underline;
 }
+
+.box #forgotPasswordLink,
+.box #ReturnToLoginLink {
+  color: var(--main-color);
+}
+
+.box a#forgotPasswordLink:hover,
+.box #ReturnToLoginLink:hover {
+  color: var(--secondary-color);
+}
