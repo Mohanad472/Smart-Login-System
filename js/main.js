@@ -13,6 +13,7 @@ nameInput = document.getElementById("nameInput");
 emailInput = document.getElementById("emailInput");
 passwordInput = document.getElementById("passwordInput");
 incorrectText = document.getElementById("incorrectText");
+emailValidText = document.getElementById("emailValidText");
 emailExistsText = document.getElementById("emailExistsText");
 successText = document.getElementById("successText");
 header = document.getElementsByTagName("h1")[0];
@@ -21,6 +22,8 @@ var list = [];
 if (JSON.parse(window.localStorage.getItem("list")) != null) {
   list = JSON.parse(window.localStorage.getItem("list"));
 }
+
+var emailRegex = /^[a-zA-Z0-9_.±]+@[a-zA-Z0-9-]+.[a-zA-Z0-9-.]+$/;
 
 var currentIndex = 0;
 
@@ -33,6 +36,7 @@ signInLink.addEventListener("click", signInWindowShow);
 loginMainBtn.addEventListener("click", login);
 signUpMainBtn.addEventListener("click", add);
 openLogoutBtn.addEventListener("click", signInWindowShow);
+emailInput.addEventListener("input", emailValid);
 
 function showCollapse() {
   if (collapsedItems.classList.contains("open")) {
@@ -88,11 +92,16 @@ function add() {
     email: emailInput.value,
     password: passwordInput.value,
   };
-  if (emailValidate(inputObject.email)) {
-    list.push(inputObject);
-    window.localStorage.setItem("list", JSON.stringify(list));
-    successText.classList.remove("d-none");
-    emailExistsText.classList.add("d-none");
+  if (!emailValid()) {
+    emailValidText.classList.remove("d-none");
+  } else {
+    if (emailValidate(inputObject.email)) {
+      list.push(inputObject);
+      window.localStorage.setItem("list", JSON.stringify(list));
+      successText.classList.remove("d-none");
+      emailExistsText.classList.add("d-none");
+      emailValidText.classList.add("d-none");
+    }
   }
 }
 
@@ -103,6 +112,8 @@ function clearInput() {
   emailExistsText.classList.add("d-none");
   incorrectText.classList.add("d-none");
   successText.classList.add("d-none");
+  emailInput.classList.remove("is-valid");
+  emailInput.classList.remove("is-invalid");
 }
 
 function login() {
@@ -130,4 +141,16 @@ function emailValidate(email) {
     }
   }
   return 1;
+}
+
+function emailValid() {
+  if (!emailRegex.test(emailInput.value)) {
+    emailInput.classList.add("is-invalid");
+    emailInput.classList.remove("is-valid");
+    return 0;
+  } else {
+    emailInput.classList.remove("is-invalid");
+    emailInput.classList.add("is-valid");
+    return 1;
+  }
 }
