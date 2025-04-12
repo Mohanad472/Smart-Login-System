@@ -11,12 +11,18 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Titillium+Web:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="./css/style.css" />
     <title>Document</title>
   </head>
   <body>
-    <div class="container-fluid vw-100 vh-100">
-      <nav class="container">
+    <div class="container-fluid w-100 vh-100">
+      <nav class="d-none py-2 px-3 container shadow-lg">
         <div class="d-flex justify-content-between align-items-center">
           <a href="#">SMART LOGIN</a>
           <div>
@@ -32,6 +38,68 @@
           </button>
         </div>
       </nav>
+
+      <main class="pt-5">
+        <div class="box p-5 w-75 mx-auto shadow-lg overflow-hidden text-center">
+          <h1>Smart Login System</h1>
+          <div id="inputSystem">
+            <form>
+              <div class="mb-3 d-none" id="nameInputDisplay">
+                <input
+                  type="text"
+                  id="nameInput"
+                  class="form-control"
+                  placeholder="Enter your name"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="email"
+                  class="form-control"
+                  id="emailInput"
+                  aria-describedby="emailHelp"
+                  placeholder="Enter your email"
+                />
+              </div>
+              <div class="mb-3">
+                <input
+                  type="password"
+                  class="form-control"
+                  id="passwordInput"
+                  placeholder="Enter your password"
+                />
+              </div>
+              <p id="incorrectText" class="text-danger d-none">
+                Incorrect email or password
+              </p>
+              <p id="emailExistsText" class="text-danger d-none">
+                Email already exists
+              </p>
+              <p id="successText" class="text-success d-none">Success</p>
+              <button
+                id="loginMainBtn"
+                type="submit"
+                class="btn btn-primary w-100 login my-3"
+              >
+                Login
+              </button>
+              <button
+                id="signUpMainBtn"
+                type="submit"
+                class="btn btn-primary w-100 login my-3 d-none"
+              >
+                Sign Up
+              </button>
+            </form>
+            <p class="text-white" id="signUpText">
+              Don’t have an account? <a href="#" id="signUpLink">Sign Up</a>
+            </p>
+            <p class="text-white d-none" id="signInText">
+              You have an account? <a href="#" id="signInLink">Sign in</a>
+            </p>
+          </div>
+        </div>
+      </main>
     </div>
 
     <script src="./js/bootstrap.bundle.min.js"></script>

@@ -4,6 +4,8 @@
   --secondary-color: #80bdff;
   --warning-message-color: RGB(220, 53, 69);
   --logout-btn-color: #ffc107;
+  --input-border-color: #ced4da;
+  --input-ph-color: #b6b6b6;
 }
 
 a {
@@ -39,4 +41,49 @@ a:hover {
 
 .open {
   height: 36px;
+}
+
+main .box h1 {
+  color: var(--main-color);
+  font-family: "Titillium Web", sans-serif;
+  font-weight: 500;
+  font-size: 40px;
+  line-height: 48px;
+}
+
+.form-control {
+  background-color: var(--bg-color-one);
+  border-color: var(--input-border-color);
+  color: white !important;
+}
+
+.form-control::placeholder {
+  color: var(--input-ph-color);
+}
+
+.form-control:focus {
+  border-color: var(--secondary-color);
+  box-shadow: none;
+  background-color: var(--bg-color-one);
+}
+
+form button.login {
+  background-color: var(--bg-color-one);
+  color: var(--main-color);
+  border-color: var(--main-color);
+}
+
+form button.login:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: white;
+}
+
+.box p a {
+  color: white;
+  text-decoration: none;
+}
+
+.box p a:hover {
+  text-decoration: underline;
 }
